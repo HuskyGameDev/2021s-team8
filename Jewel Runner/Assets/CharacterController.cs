@@ -75,6 +75,22 @@ public class CharacterController : MonoBehaviour
 				Flip();
 			}
 		}
+		if (!grounded)
+		{
+		Vector3 targetVelocity = new Vector2(move * 10f, rigidbody2D.velocity.y);
+        rigidbody2D.velocity = Vector3.SmoothDamp(rigidbody2D.velocity, targetVelocity, ref velocity, movementSmoothing); // makes for smooth moves
+            if (move > 0 && !facingRight)
+            {
+            // player sprite flips
+            Flip();
+            }
+            // if the player is facing right but moving left then
+            else if (move < 0 && facingRight)
+            {
+            // player sprite flips
+            Flip();
+            }
+		}
 		// if the player is on the ground and jumps
 		if (grounded && jump)
 		{
