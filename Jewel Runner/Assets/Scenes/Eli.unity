@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 16879009}
   - component: {fileID: 16879008}
   - component: {fileID: 16879007}
+  - component: {fileID: 16879012}
   m_Layer: 10
   m_Name: JewelOrigin
   m_TagString: Untagged
@@ -283,6 +284,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &16879012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16879006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e857a76e4d13f4ac1a97848274def2b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jewel: {fileID: 16879006}
+  jewel2: {fileID: 1846671752}
 --- !u!1 &172585316
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +468,7 @@ GameObject:
   - component: {fileID: 1846671755}
   - component: {fileID: 1846671754}
   - component: {fileID: 1846671753}
+  - component: {fileID: 1846671758}
   m_Layer: 10
   m_Name: JewelOrigin (1)
   m_TagString: Untagged
@@ -602,6 +618,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1846671758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846671752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e857a76e4d13f4ac1a97848274def2b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jewel: {fileID: 1846671752}
+  jewel2: {fileID: 16879006}
 --- !u!1 &1900105984
 GameObject:
   m_ObjectHideFlags: 0
