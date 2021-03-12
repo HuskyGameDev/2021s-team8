@@ -107,4 +107,18 @@ public class EnemyFOV : MonoBehaviour
     {
         return fov;
     }
+
+    /* gets the view distance of the FOV
+     * 
+     * return: float value of view distance
+     */
+    public float getViewDistance()
+    {
+        return viewDistance;
+    }
+
+    public float getAngle()
+    {
+        return angle;
+    }
 }

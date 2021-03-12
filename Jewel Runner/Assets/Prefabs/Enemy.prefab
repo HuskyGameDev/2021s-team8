@@ -111,8 +111,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   changeAngle: 0
-  fov: 0
-  viewDistance: 1
+  fov: 45
+  viewDistance: 4
 --- !u!1 &8418211028001681925
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,6 +264,7 @@ MonoBehaviour:
   fieldOfView: {fileID: 8418211027842602051}
   respawnPosition: {fileID: 8418211028001681925}
   moveSpeed: 1
+  player: {fileID: 0}
 --- !u!61 &8418211029048333482
 BoxCollider2D:
   m_ObjectHideFlags: 0
