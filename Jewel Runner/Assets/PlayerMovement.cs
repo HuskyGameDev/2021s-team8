@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
+    public Animator animator;
 
     public float charSpeed = 40f;       // character speed
     float walkSpeed = 0.0f;             // walking speed
@@ -17,10 +18,19 @@ public class PlayerMovement : MonoBehaviour
         // the inputs such as "Horizontal" are decided at edit<project settings<input manager  
 
         walkSpeed = Input.GetAxisRaw("Horizontal")*charSpeed;  // takes an input (a, d) to move by our determined speed.
+
+        animator.SetFloat("Speed", Mathf.Abs(walkSpeed));
+
         if(Input.GetButtonDown("Jump")) // takes w as the input
         {
             jump = true;                // when w is pressed it is true you are jumping
+            animator.SetBool("IsJumping", true);
         }
+    }
+
+    public void OnLanding()
+    {
+        animator.SetBool("IsJumping", false);
     }
 
     void FixedUpdate()
