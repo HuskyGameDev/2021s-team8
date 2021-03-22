@@ -7,9 +7,10 @@ public class Respawn : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        
-         GameObject.FindGameObjectWithTag("Player").transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
-      
+        if (collision.CompareTag("Player"))
+        {
+            GameObject.FindGameObjectWithTag("Player").transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
+        }
     }
 
 }
