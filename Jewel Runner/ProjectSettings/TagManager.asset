@@ -5,10 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Spikes
-  - Ground
-  - Wall
-  - Enemy
-  - EnemyRespawn
   layers:
   - Default
   - TransparentFX
@@ -21,7 +17,7 @@ TagManager:
   - Player
   - Ground
   - Jewel
-  - Background Main Menu
+  - 
   - 
   - 
   - 
@@ -43,12 +39,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: 2nd
-    uniqueID: 897873835
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Ground
     uniqueID: 4265022143
+    locked: 0
+  - name: 2nd
+    uniqueID: 897873835
     locked: 0

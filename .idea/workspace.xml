@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CMakeSettings">
-    <configurations>
-      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
-    </configurations>
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="9f2eb00e-cff0-48c4-bf9e-bc680b9bf89f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ClangdSettings">
-    <option name="formatViaClangd" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,10 +24,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="cf.first.check.clang-format" value="false" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -47,16 +37,7 @@
       <updated>1612824938611</updated>
       <workItem from="1612824940161" duration="28000" />
       <workItem from="1613001003537" duration="4000" />
-      <workItem from="1613408836922" duration="1064000" />
-      <workItem from="1613514854598" duration="12000" />
-      <workItem from="1614126540930" duration="5000" />
-      <workItem from="1614127265826" duration="2000" />
-      <workItem from="1614127346210" duration="1000" />
-      <workItem from="1614127427002" duration="46000" />
-      <workItem from="1614127567175" duration="4000" />
-      <workItem from="1614127582433" duration="13000" />
-      <workItem from="1614127623330" duration="1000" />
-      <workItem from="1614127695886" duration="2000" />
+      <workItem from="1613408836922" duration="842000" />
     </task>
     <servers />
   </component>

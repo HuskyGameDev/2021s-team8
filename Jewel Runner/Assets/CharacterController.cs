@@ -45,7 +45,7 @@ public class CharacterController : MonoBehaviour
 			if (colliders[i].gameObject != gameObject)
 			{
 				grounded = true;
-				if (!wasGrounded && rigidbody2D.velocity.y < 0)
+				if (!wasGrounded)
 					OnLandEvent.Invoke();
 			}
 		}
@@ -77,8 +77,8 @@ public class CharacterController : MonoBehaviour
 		}
 		if (!grounded)
 		{
-			Vector3 targetVelocity = new Vector2(move * 10f, rigidbody2D.velocity.y);
-			rigidbody2D.velocity = Vector3.SmoothDamp(rigidbody2D.velocity, targetVelocity, ref velocity, movementSmoothing); // makes for smooth moves
+		Vector3 targetVelocity = new Vector2(move * 10f, rigidbody2D.velocity.y);
+        rigidbody2D.velocity = Vector3.SmoothDamp(rigidbody2D.velocity, targetVelocity, ref velocity, movementSmoothing); // makes for smooth moves
             if (move > 0 && !facingRight)
             {
             // player sprite flips
