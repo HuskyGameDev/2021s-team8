@@ -11,7 +11,7 @@ using UnityEngine;
  */
 
 
-public class Disappearance : MonoBehaviour
+public class BlackJewel : MonoBehaviour
 {
     public GameObject jewel;    //The jewel object
     public GameObject jewel2;   //The other jewel object
