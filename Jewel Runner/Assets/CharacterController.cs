@@ -11,7 +11,7 @@ public class CharacterController : MonoBehaviour
 	[SerializeField] private Transform isGrounded;                          // Checking if the player is on the ground or not
 	[Range(0, .3f)] [SerializeField] private float movementSmoothing = .05f;
 
-	const float isGroundedOverlap = .2f;				// The overlap amount to determine if the player is grounded
+	const float isGroundedOverlap = .001f;				// The overlap amount to determine if the player is grounded
 	private bool grounded;								 // true or false whether the player is on the ground
 	private Rigidbody2D rigidbody2D;
 	private bool facingRight = true;					// Determines which way the player is facing
