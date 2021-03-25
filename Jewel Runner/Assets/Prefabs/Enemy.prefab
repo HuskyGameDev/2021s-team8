@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ad0df04bc4631844782564cb3fdceb0e, type: 2}
+  - {fileID: 2100000, guid: 5980c855aad21b34abbaf5edb74d97d9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8418211027842602055}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c56e5bc2fc866440bb116afe1eb7a08, type: 3}
+  m_Script: {fileID: 11500000, guid: b4074bd1c722d4e348dd0c65fab57731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   layerMask:
@@ -112,7 +112,7 @@ MonoBehaviour:
     m_Bits: 512
   changeAngle: 0
   fov: 45
-  viewDistance: 4
+  viewDistance: 5
 --- !u!1 &8418211028001681925
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8418211029048333484}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cc2d5c987c34ba45948d851edc729b3, type: 3}
+  m_Script: {fileID: 11500000, guid: e874df598fb5c41e3ad048105d0a85cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fieldOfView: {fileID: 8418211027842602051}
