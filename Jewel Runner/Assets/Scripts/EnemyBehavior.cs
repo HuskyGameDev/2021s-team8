@@ -55,7 +55,6 @@ public class EnemyBehavior : MonoBehaviour
                     if (raycast.collider.CompareTag("Player"))
                     {
                         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                        Debug.Log("Player detected");
                     }
                 }
             }
