@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class CycleSpikesScript : MonoBehaviour
 {
-    private bool isOut = false;
+    private bool isOut = false; //boolean that keeps track of whether the spikes are out or not.
     [SerializeField] private float cycleLength;
 
 
     void Start()
     {
-        InvokeRepeating("Cycle", 0, cycleLength);
+        GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
+        InvokeRepeating("Cycle", 0, cycleLength); //Every cycleLength seconds, the Cycle method will be called.
     }
 
+    /**
+     * Whenever cycle is called, the spikes will either pop out or retract, depending on if they are already out or not.
+     * 
+     **/
     public void Cycle()
     {
         if (isOut)
