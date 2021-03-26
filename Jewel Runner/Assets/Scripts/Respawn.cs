@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Respawn : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class Respawn : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            GameObject.FindGameObjectWithTag("Player").transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
