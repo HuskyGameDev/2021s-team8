@@ -7,11 +7,17 @@ public class MainMenu : MonoBehaviour
 {
     public void GameStart()
         {
-            SceneManager.LoadScene("River"); //Loads the scene based off of button input
+        StartCoroutine(DelayedStart());
         }
 
     public void GameQuit()
         {
                 Application.Quit(); //quits the game
         }
+
+    IEnumerator DelayedStart()
+    {
+        yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene("River"); //Loads the scene based off of button input
+    }
 }
