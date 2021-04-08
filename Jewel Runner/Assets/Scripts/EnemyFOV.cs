@@ -8,6 +8,8 @@ public class EnemyFOV : MonoBehaviour
     [SerializeField] private float changeAngle = 0f; //allows for the angle to be changed
     [SerializeField] private float fov = 45f; //how wide the enemy's FOV is
     [SerializeField] private float viewDistance = 1f; //determines how far the fov goes
+    [SerializeField] private float xChange;
+    [SerializeField] private float yChange;
     private Mesh mesh; //mesh reference
     private Vector3 origin; //origin of the vision cone
     private float angle; //the angle that the furthest counterclockwise point of the vision cone is facing
@@ -31,18 +33,18 @@ public class EnemyFOV : MonoBehaviour
         Vector2[] uv = new Vector2[vertices.Length]; //vector2 arrray that contains the uv map locations for mesh
         int[] triangles = new int[rayCount * 3];
 
-        vertices[0] = origin;
+        vertices[0] = origin + new Vector3(xChange, yChange, 0);
 
         int vertexIndex = 1;
         int triangleIndex = 0;
         for (int i = 0; i <= rayCount; i++)
         {
             Vector3 vertex;
-            RaycastHit2D raycastHit2D = Physics2D.Raycast(origin, getVectorFromAngle(angle), viewDistance, layerMask); //sends out a raycast from the origin "viewDistance" distance which collides with anything on the proper layerMask
+            RaycastHit2D raycastHit2D = Physics2D.Raycast(origin + new Vector3(xChange, yChange, 0), getVectorFromAngle(angle), viewDistance, layerMask); //sends out a raycast from the origin "viewDistance" distance which collides with anything on the proper layerMask
 
             if (raycastHit2D.collider == null) //if the raycast hits something, then the new vertex will be put at that point, otherwise, the vertext goes to the max distance
             {
-                vertex = origin + getVectorFromAngle(angle) * viewDistance;
+                vertex = origin + new Vector3(xChange, yChange, 0) + getVectorFromAngle(angle) * viewDistance;
             }
             else
             {
