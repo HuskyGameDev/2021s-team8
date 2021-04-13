@@ -27,6 +27,11 @@ public class Teleport : MonoBehaviour
         touchingJewel = true;       // If the player collides with the jewel this will set the bool to true
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        touchingJewel = false;      // Once the player is no longer touching the jewel, sets the bool to false
+    }
+
     void teleport()
     {
         /* This pretty much means that the player's position will become the target jewel's 

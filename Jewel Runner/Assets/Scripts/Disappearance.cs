@@ -7,25 +7,37 @@ using UnityEngine;
  *
  * How to use this: 
  * Drag and drop this script onto both the starting jewel and the other jewel that the player gets teleported to. 
- * Supply the inputs of the starting jewel and the ending jewel by dragging into the corect spots.
+ * Supply the inputs of the starting jewel and the ending jewel by dragging into the correct spots.
  */
-
 
 public class Disappearance : MonoBehaviour
 {
     public GameObject jewel;    //The jewel object
     public GameObject jewel2;   //The other jewel object
+    private bool touchingJewel = false;     // Determines if we're touching the jewel
 
-
-    /*This method uses a trigger event to know when the specific object (or jewel) gets collided with.
-     * 
-     * Once the player touches the jewel and teleports, both jewels - the orginal and one teleported to -
-     * will be set to be deactivated, meaning they will disappear from the screen and not be able to be 
-     * used again by the player.
-     */
     void OnTriggerEnter2D(Collider2D collision)
     {
-        jewel.SetActive(false);
-        jewel2.SetActive(false);
+        touchingJewel = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        touchingJewel = false;
+    }
+
+    void Update()
+    {
+
+        /* If the E key is pressed AND the player is touching the jewel,
+         * then the jewels will be deactivated so that the player can no
+         * longer interact with the jewel, abstracting the idea that the
+         * jewel is breaking.
+         */
+        if (Input.GetKeyDown(KeyCode.E) && touchingJewel)
+        {
+            jewel.SetActive(false);
+            jewel2.SetActive(false);
+        }
     }
 }
