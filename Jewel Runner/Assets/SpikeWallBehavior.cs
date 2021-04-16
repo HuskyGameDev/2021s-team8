@@ -19,7 +19,7 @@ public class SpikeWallBehavior : MonoBehaviour
     {
         if (PressurePlate.GetIsPressed() && MoveDistance < MoveAmount) //if the pressure plate is pressed and the spike wall hasn't reached its final destination, the spikewall moves
         {
-            transform.Translate(0, MoveSpeed * MoveAmount * Time.deltaTime, 0);
+            transform.Translate(0, MoveSpeed * Time.deltaTime, 0);
             MoveDistance += MoveSpeed * Time.deltaTime;
         }
     }
