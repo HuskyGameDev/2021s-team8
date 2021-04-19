@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/River.unity
     guid: 9ac00aa4f3b22af4297700513939f285
+  - enabled: 1
+    path: Assets/Scenes/Simone.unity
+    guid: 535e19ce6b68ccc43af192643c73015f
   m_configObjects: {}
