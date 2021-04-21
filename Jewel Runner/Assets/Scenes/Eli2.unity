@@ -2135,8 +2135,8 @@ GameObject:
   - component: {fileID: 359814714}
   - component: {fileID: 359814713}
   - component: {fileID: 359814712}
-  - component: {fileID: 359814715}
   - component: {fileID: 359814716}
+  - component: {fileID: 359814715}
   m_Layer: 0
   m_Name: Black Jewel (Origin)
   m_TagString: Untagged
@@ -6250,7 +6250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1095302566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.96, y: -6.5, z: 0}
+  m_LocalPosition: {x: 13.96, y: -6.53, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 1639319753}
