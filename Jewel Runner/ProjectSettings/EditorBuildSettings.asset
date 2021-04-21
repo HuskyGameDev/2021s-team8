@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Simone.unity
     guid: 535e19ce6b68ccc43af192643c73015f
+  - enabled: 1
+    path: Assets/Scenes/Noah.unity
+    guid: 8d8bd7203fcad0f469a8f293af29caad
+  - enabled: 1
+    path: Assets/Scenes/Eli2.unity
+    guid: 433a63e9e1dcc4c9989be3bf91a6e60b
   m_configObjects: {}

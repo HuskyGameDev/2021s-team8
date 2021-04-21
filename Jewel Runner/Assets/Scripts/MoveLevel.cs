@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MoveLevel : MonoBehaviour
 {
+    public string sceneName;
     public GameObject player;       //player
     private bool door = false;     //checks if we are touching the door
 
@@ -22,7 +23,7 @@ public class MoveLevel : MonoBehaviour
     IEnumerator DelayedStart()
         {
             yield return new WaitForSeconds(.01f);
-            SceneManager.LoadScene("Simone"); //Loads the scene based off of button input
+            SceneManager.LoadScene(sceneName); //Loads the scene based off of button input
         }
 
     void Update()
@@ -30,7 +31,7 @@ public class MoveLevel : MonoBehaviour
         // loads new level if e is pressed and touching door
         if (Input.GetKeyDown(KeyCode.E) && door)
         {
-            DelayedStart();                 // sets new level
+            StartCoroutine(DelayedStart());                 // sets new level
             door = false;     // checks if player is touching door
         }
     }
