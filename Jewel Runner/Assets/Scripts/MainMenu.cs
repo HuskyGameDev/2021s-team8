@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator DelayedStart()
     {
-        yield return new WaitForSeconds(.01f);
-        SceneManager.LoadScene("River"); //Loads the scene based off of button input
+        yield return new WaitForSeconds(2.8f);
+        SceneManager.LoadScene("Johnathan"); //Loads the scene based off of button input
     }
 }

@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 84e9ec535f8fac04fb49650edaa8fd5f
   - enabled: 1
+    path: Assets/Scenes/Johnathan.unity
+    guid: 472de4b04469a0245b8d04d0f7b07b81
+  - enabled: 1
     path: Assets/Scenes/River.unity
     guid: 9ac00aa4f3b22af4297700513939f285
   - enabled: 1
@@ -20,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Eli2.unity
     guid: 433a63e9e1dcc4c9989be3bf91a6e60b
+  - enabled: 1
+    path: Assets/Scenes/Michael 2.unity
+    guid: 829159e05b5c1354a80809dd93eb9b4e
+  - enabled: 1
+    path: Assets/Scenes/End Scene.unity
+    guid: 4970b6944536fc24fbf4047ec16ab189
   m_configObjects: {}

@@ -74,6 +74,9 @@ TextureImporter:
   - first:
       213: 5334313860431787107
     second: NewGameObj_11
+  - first:
+      213: -5200923920459205650
+    second: NewGameObj_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -406,6 +409,27 @@ TextureImporter:
       bones: []
       spriteID: 364ba73913a470a40800000000000000
       internalID: 5334313860431787107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewGameObj_12
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 122
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee37231004b92d7b0800000000000000
+      internalID: -5200923920459205650
       vertices: []
       indices: 
       edges: []
