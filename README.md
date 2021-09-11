@@ -1,21 +1,18 @@
 # 2021s-team8
-<<<<<<< Updated upstream
-<<<<<<< HEAD
+
+Jewel Runner
+
+
+An explorer falls into a cave and discovers they are surrounded by skeleton monsters. 
+In a race to escape, the explorer discovers jewels and learns that the jewels hold a magical power to teleport. 
+The explorer will need to use this power to escape the depths and find a way to escape the cave.
+
+Simone Tilbury
 Johnathan Oestringer
-=======
-<<<<<<< HEAD
-Michael Bunker
-=======
-<<<<<<< HEAD
 River Dallas
-=======
 Noah Kolczynski
->>>>>>> f3dd4db86b34fbf0651156219e50e28ee246ba7a
->>>>>>> e1c2c765f0b73fee8c609001b5313124e0adc013
-<<<<<<< HEAD
-=======
+Ethan Hohman
+Michael Bunker
 Eli Pinnoo
->>>>>>> Stashed changes
-=======
->>>>>>> 59a78dfee4eb9853c35fab776db355ace081e8b4
->>>>>>> 3eb6e46bee863ef99d398610fa754ddd948d00e4
+Alex Hernandez
+
