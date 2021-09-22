@@ -26,6 +26,11 @@ public class PlayerMovement : MonoBehaviour
             jump = true;                // when w is pressed it is true you are jumping
             animator.SetBool("IsJumping", true);
         }
+
+        if (Input.GetButtonDown("Dash")) // takes left shift as input
+        {
+            controller.Dash();
+        }
     }
 
     public void OnLanding()
