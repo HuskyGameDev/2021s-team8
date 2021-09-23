@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BatBehavior : MonoBehaviour
 {
@@ -52,17 +53,21 @@ public class BatBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) // Whenever colliders hits a wall, the bat turns
     {
-        if (collision.CompareTag("Wall"))
+        if (collision.CompareTag("Wall")) // If the bat hits a wall (horizontal)
         {
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             lookingRight = !lookingRight;
         }
-        if (collision.CompareTag("Ground"))
+        if (collision.CompareTag("Ground")) // If the bat hits the ground (vertical)
         {
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             lookingRight = !lookingRight;
             goingUp = !goingUp;
+        }
+        if (collision.CompareTag("Player")) // If the bat hits the player
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Resets level
         }
     }
 
