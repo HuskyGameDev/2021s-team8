@@ -47,7 +47,7 @@ public class Teleport : MonoBehaviour
     void Update()
     {
         // if the E key is pressed AND the player is touching the jewel
-        if (Input.GetKeyDown(KeyCode.E) && touchingJewel)
+        if (touchingJewel)
         {
             teleport();                 // teleports the player
             touchingJewel = false;      // sets back to false or else it will continue thinking we're touching a jewel
