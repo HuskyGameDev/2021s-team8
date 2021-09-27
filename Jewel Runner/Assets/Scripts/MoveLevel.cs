@@ -28,7 +28,6 @@ public class MoveLevel : MonoBehaviour
 
     void Update()
     {
-        // loads new level if e is pressed and touching door
         if (door)
         {
             StartCoroutine(DelayedStart());                 // sets new level
