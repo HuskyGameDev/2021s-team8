@@ -46,7 +46,7 @@ public class Teleport : MonoBehaviour
 
     void Update()
     {
-        // if the E key is pressed AND the player is touching the jewel
+        // if player is touching the jewel
         if (touchingJewel)
         {
             teleport();                 // teleports the player

@@ -29,7 +29,7 @@ public class MoveLevel : MonoBehaviour
     void Update()
     {
         // loads new level if e is pressed and touching door
-        if (Input.GetKeyDown(KeyCode.E) && door)
+        if (door)
         {
             StartCoroutine(DelayedStart());                 // sets new level
             door = false;     // checks if player is touching door
