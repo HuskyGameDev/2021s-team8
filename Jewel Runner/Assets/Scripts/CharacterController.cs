@@ -20,7 +20,7 @@ public class CharacterController : MonoBehaviour
     private float nextDashTime = 0f;
     private bool canDash = true;
     private bool isDashing = false;
-    private bool isJumping = false;
+    [SerializeField] private bool isJumping = false;
 
     private float jumpTimeCounter;
     [SerializeField] private float jumpTime;
@@ -75,7 +75,7 @@ public class CharacterController : MonoBehaviour
 
 	public void Move(float move, bool jump)
 	{
-        if (!isDashing)
+        if (!isDashing) //prevents player from moving if they are in the middle of a dash
         {
             //if the player is on the ground
             //if the player is on the ground
@@ -124,7 +124,7 @@ public class CharacterController : MonoBehaviour
                 rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpForce);
             }
 
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space) && isJumping) //while the space key is down, if the amount of time the player is allowed to jump for hasn't been reached, the player will continue up
             {
                 if(jumpTimeCounter > 0)
                 {
@@ -136,7 +136,7 @@ public class CharacterController : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (Input.GetKeyUp(KeyCode.Space)) //whenever the player lets go of the space button, they will stop jumping.
             {
                 isJumping = false;
             }
