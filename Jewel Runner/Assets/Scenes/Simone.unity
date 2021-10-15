@@ -1832,6 +1832,8 @@ MonoBehaviour:
     m_Bits: 512
   isGrounded: {fileID: 506841558}
   movementSmoothing: 0.1
+  isJumping: 0
+  jumpTime: 0
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
