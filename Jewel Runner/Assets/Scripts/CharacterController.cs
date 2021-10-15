@@ -19,6 +19,11 @@ public class CharacterController : MonoBehaviour
     private float dashCooldownTime = 0.25f;
     private float nextDashTime = 0f;
     private bool canDash = true;
+    private bool isDashing = false;
+    private bool isJumping = false;
+
+    private float jumpTimeCounter;
+    [SerializeField] private float jumpTime;
 
 	[Header("Events")]
 	[Space]
@@ -34,6 +39,8 @@ public class CharacterController : MonoBehaviour
 
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
+        isJumping = false;
+        isDashing = false;
 	}
 
 	private void FixedUpdate()
@@ -55,10 +62,12 @@ public class CharacterController : MonoBehaviour
 		}
 
         // deactivates gravity for .15 seconds after dashing, improves the feel of horizontal dashes
-        if (Time.time < nextDashTime - .15f){
+        if (Time.time < nextDashTime - .12f){
             rigidbody2D.gravityScale = 0;
+            isDashing = true;
         } else
         {
+            isDashing = false;
             rigidbody2D.gravityScale = 3;
         }
 	}
@@ -66,50 +75,72 @@ public class CharacterController : MonoBehaviour
 
 	public void Move(float move, bool jump)
 	{
-		//if the player is on the ground
-		//if the player is on the ground
-		if (grounded)
-		{
-			// Character moves by a velocity
-			Vector3 targetVelocity = new Vector2(move * 10f, rigidbody2D.velocity.y);
-			rigidbody2D.velocity = Vector3.SmoothDamp(rigidbody2D.velocity, targetVelocity, ref velocity, movementSmoothing); // makes for smooth moves
+        if (!isDashing)
+        {
+            //if the player is on the ground
+            //if the player is on the ground
+            if (grounded)
+            {
+                // Character moves by a velocity
+                Vector3 targetVelocity = new Vector2(move * 10f, rigidbody2D.velocity.y);
+                rigidbody2D.velocity = Vector3.SmoothDamp(rigidbody2D.velocity, targetVelocity, ref velocity, movementSmoothing); // makes for smooth moves
 
-			// if the player is facing left and moving right then
-			if (move > 0 && !facingRight)
-			{
-				// player sprite flips
-				Flip();
-			}
-			// if the player is facing right but moving left then
-			else if (move < 0 && facingRight)
-			{
-				// player sprite flips
-				Flip();
-			}
-		}
-		if (!grounded)
-		{
-			Vector3 targetVelocity = new Vector2(move * 10f, rigidbody2D.velocity.y);
-			rigidbody2D.velocity = Vector3.SmoothDamp(rigidbody2D.velocity, targetVelocity, ref velocity, movementSmoothing); // makes for smooth moves
-            if (move > 0 && !facingRight)
-            {
-            // player sprite flips
-            Flip();
+                // if the player is facing left and moving right then
+                if (move > 0 && !facingRight)
+                {
+                    // player sprite flips
+                    Flip();
+                }
+                // if the player is facing right but moving left then
+                else if (move < 0 && facingRight)
+                {
+                    // player sprite flips
+                    Flip();
+                }
             }
-            // if the player is facing right but moving left then
-            else if (move < 0 && facingRight)
+            if (!grounded)
             {
-            // player sprite flips
-            Flip();
+                Vector3 targetVelocity = new Vector2(move * 10f, rigidbody2D.velocity.y);
+                rigidbody2D.velocity = Vector3.SmoothDamp(rigidbody2D.velocity, targetVelocity, ref velocity, movementSmoothing); // makes for smooth moves
+                if (move > 0 && !facingRight)
+                {
+                    // player sprite flips
+                    Flip();
+                }
+                // if the player is facing right but moving left then
+                else if (move < 0 && facingRight)
+                {
+                    // player sprite flips
+                    Flip();
+                }
             }
-		}
-		// if the player is on the ground and jumps
-		if (grounded && jump)
-		{
-			// Jump force is added to the player
-			grounded = false;
-			rigidbody2D.AddForce(new Vector2(0f, jumpForce));
-		}
+            // if the player is on the ground and jumps
+            if (grounded && jump)
+            {
+                // Jump force is added to the player
+                grounded = false;
+                isJumping = true;
+                jumpTimeCounter = jumpTime;
+                rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpForce);
+            }
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                if(jumpTimeCounter > 0)
+                {
+                    rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpForce);
+                    jumpTimeCounter -= Time.deltaTime;
+                } else
+                {
+                    isJumping = false;
+                }
+            }
+
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                isJumping = false;
+            }
+        }
 	}
 
 
@@ -128,11 +159,11 @@ public class CharacterController : MonoBehaviour
     {
         if (Time.time > nextDashTime && canDash) // makes sure the dash cooldown has finished and the player has touched the ground since dashing previously
         {
-            if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0) 
+            if (Input.GetAxisRaw("Horizontal") != 0) 
             {
-                //if the player is pressing in a direction, they will dash in that direction
-                Vector2 direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-                rigidbody2D.velocity = new Vector2(15 * direction.x, 10f * direction.y);
+                //if the player is pressing in a horizontal direction, they will dash in that direction
+                Vector2 direction = new Vector2(Input.GetAxisRaw("Horizontal"), 0);
+                rigidbody2D.velocity = new Vector2(12 * direction.x, 0);
             } else {
                 //if the player is not pressing a direction, they will dash in the direction they're facing
                 int direction;
@@ -144,8 +175,9 @@ public class CharacterController : MonoBehaviour
                 {
                     direction = -1;
                 }
-                rigidbody2D.velocity = new Vector2(20 * direction, 0);
+                rigidbody2D.velocity = new Vector2(12 * direction, 0);
             }
+            isDashing = true;
             canDash = false; //makes it so that the player can't dash until they touch the ground
             nextDashTime = Time.time + dashCooldownTime; //sets the next time when the player can dash
         }

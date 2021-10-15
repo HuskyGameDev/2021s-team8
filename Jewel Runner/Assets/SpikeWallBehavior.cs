@@ -6,7 +6,7 @@ public class SpikeWallBehavior : MonoBehaviour
 {
     [SerializeField] private PressurePlateBehavior PressurePlate; //script of pressure plate that activates the spike wall
     [SerializeField] [Range(1,20)] private float MoveAmount = 1; //distance the spike wall will travel
-    [SerializeField] [Range(1,10)] private float MoveSpeed = 1; //speed the spike wall travels at
+    [SerializeField] [Range(0,10)] private float MoveSpeed = 1; //speed the spike wall travels at
     private float MoveDistance; //the distance the spike wall has traveled
 
     // Start is called before the first frame update

@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Abs(walkSpeed));
 
-        if(Input.GetButtonDown("Jump")) // takes w as the input
+        if(Input.GetKeyDown(KeyCode.Space)) // takes w as the input
         {
             jump = true;                // when w is pressed it is true you are jumping
             animator.SetBool("IsJumping", true);

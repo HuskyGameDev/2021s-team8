@@ -1135,12 +1135,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4963b1eab956fe48bab6f115ad97686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 600
+  jumpForce: 8
   isGround:
     serializedVersion: 2
     m_Bits: 512
   isGrounded: {fileID: 74034456}
   movementSmoothing: 0.1
+  jumpTime: 0.18
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
