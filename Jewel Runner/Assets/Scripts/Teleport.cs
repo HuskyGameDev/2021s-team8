@@ -20,7 +20,8 @@ public class Teleport : MonoBehaviour
 {
     public Transform targetJewel;   // The jewel we are teleporting to
     public GameObject player;       // The character object
-    private bool touchingJewel = false;     // Determines if we're touching the jewel 
+    private bool touchingJewel = false;     // Determines if we're touching the jewel
+    public bool delayTeleport = false;
 
     void OnTriggerEnter2D(Collider2D collision)
     {   
@@ -42,13 +43,23 @@ public class Teleport : MonoBehaviour
          * point numbers (e.g. not doubles) so you must add 'f' after decimal values.
          */
         player.transform.position = targetJewel.transform.position + new Vector3(0.5f, 0, 0);
+         SetMyBoolToFalse();
     }
+
+  IEnumerator SetMyBoolToFalse()
+   {
+
+      yield return new WaitForSeconds(3f);
+      delayTeleport = false;
+      yield return null;
+ }
 
     void Update()
     {
         // if player is touching the jewel
-        if (touchingJewel)
+        if (touchingJewel && delayTeleport == false)
         {
+            delayTeleport = true;
             teleport();                 // teleports the player
             touchingJewel = false;      // sets back to false or else it will continue thinking we're touching a jewel
         }
