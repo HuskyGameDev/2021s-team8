@@ -1510,6 +1510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetJewel: {fileID: 2117652764}
   player: {fileID: 216760965}
+  delayTeleport: 0
 --- !u!61 &205869662
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1826,14 +1827,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4963b1eab956fe48bab6f115ad97686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 8
+  jumpForce: 600
   isGround:
     serializedVersion: 2
     m_Bits: 512
   isGrounded: {fileID: 506841558}
   movementSmoothing: 0.1
   isJumping: 0
-  jumpTime: 0.18
+  jumpTime: 0
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -2021,6 +2022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetJewel: {fileID: 1080402037}
   player: {fileID: 216760965}
+  delayTeleport: 0
 --- !u!61 &235552036
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3811,6 +3813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetJewel: {fileID: 235552034}
   player: {fileID: 216760965}
+  delayTeleport: 0
 --- !u!61 &1080402039
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4411,6 +4414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetJewel: {fileID: 1380095690}
   player: {fileID: 216760965}
+  delayTeleport: 0
 --- !u!61 &1169441187
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5715,6 +5719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetJewel: {fileID: 1169441185}
   player: {fileID: 216760965}
+  delayTeleport: 0
 --- !u!61 &1380095692
 BoxCollider2D:
   m_ObjectHideFlags: 0
