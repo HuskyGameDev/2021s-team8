@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 public class BatBehavior : MonoBehaviour
 {
     [SerializeField] private GameObject respawnPosition; // Respawn position for bat
-    [SerializeField] private float moveSpeed = 1f; // Horizontal Movement speed of the bat
-    [SerializeField] private float vMoveSpeed = 1f; // Vertical Movement speed of the bat
+    [SerializeField] private float speed = 1f; // Horizontal Movement speed of the bat
 
     [SerializeField] private GameObject player; // 
     private Vector2 aimDirection;
@@ -16,7 +15,17 @@ public class BatBehavior : MonoBehaviour
     BoxCollider2D myBoxCollider;
 
     private bool lookingRight = false; // Bool for checking direction bat is facing
-    private bool goingUp = false;
+
+    private float thetaStep = Mathf.PI / 32f;
+    [SerializeField] private float theta = 0f;
+    [SerializeField] private float amplitude = 4f;
+
+    private float xOffset; // k variable for Sine equation
+    [SerializeField] private float waveFrequency = 2f;
+
+    [SerializeField] private float oneForHorz = 0;
+
+    private int waveDirection = 1;
 
 
     // Start is called before the first frame update
@@ -28,42 +37,34 @@ public class BatBehavior : MonoBehaviour
 
     private void Update()
     {
-        if (lookingRight && goingUp) // Moves bat right and up
-        {
-            myRigidbody.velocity = new Vector2(moveSpeed, vMoveSpeed);
-            aimDirection = new Vector2(10, 0);
+        xOffset = transform.position.x;
+        float newXPos = waveDirection * amplitude * Mathf.Sin(theta * waveFrequency) + xOffset;
+        float xStep = newXPos - transform.position.x;
 
-        }
-        else if (lookingRight && !goingUp)// Moves bat left
+        if (lookingRight == false && oneForHorz != 1)
         {
-            myRigidbody.velocity = new Vector2(moveSpeed, -vMoveSpeed);
-            aimDirection = new Vector2(10, 0);
+            transform.Translate(new Vector3(xStep, speed * Time.deltaTime));
         }
-        else if (!lookingRight && goingUp) 
+        else if (lookingRight == true && oneForHorz != 1)
         {
-            myRigidbody.velocity = new Vector2(-moveSpeed, vMoveSpeed);
-            aimDirection = new Vector2(-10, 0);
+            transform.Translate(new Vector3(xStep, -1 * (speed * Time.deltaTime)));
+        }
+        else if (lookingRight == false && oneForHorz == 1) {
+            transform.Translate(new Vector3((speed * Time.deltaTime), xStep));
         }
         else
         {
-            myRigidbody.velocity = new Vector2(-moveSpeed, -vMoveSpeed);
-            aimDirection = new Vector2(-10, 0);
+            transform.Translate(new Vector3(-1 * (speed * Time.deltaTime), xStep));
+
         }
+        theta += thetaStep;
     }
 
     private void OnTriggerEnter2D(Collider2D collision) // Whenever colliders hits a wall, the bat turns
     {
-        if (collision.CompareTag("Wall")) // If the bat hits a wall (horizontal)
+        if (collision.CompareTag("Ground")) // If the bat hits a wall (horizontal)
         {
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
             lookingRight = !lookingRight;
-        }
-        if (collision.CompareTag("Ground")) // If the bat hits the ground (vertical)
-        {
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-            lookingRight = !lookingRight;
-            goingUp = !goingUp;
         }
         if (collision.CompareTag("Player")) // If the bat hits the player
         {
