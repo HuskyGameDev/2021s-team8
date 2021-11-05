@@ -27,6 +27,9 @@ public class BatBehavior : MonoBehaviour
 
     private int waveDirection = 1;
 
+    [SerializeField] bool horizontalWave = true;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,27 +40,35 @@ public class BatBehavior : MonoBehaviour
 
     private void Update()
     {
-        xOffset = transform.position.x;
-        float newXPos = waveDirection * amplitude * Mathf.Sin(theta * waveFrequency) + xOffset;
-        float xStep = newXPos - transform.position.x;
+        if (horizontalWave)
+        {
+            xOffset = transform.position.x;
+            float newXPos = waveDirection * amplitude * Mathf.Sin(theta * waveFrequency) + xOffset;
+            float xStep = newXPos - transform.position.x;
 
-        if (lookingRight == false && oneForHorz != 1)
-        {
-            transform.Translate(new Vector3(xStep, speed * Time.deltaTime));
-        }
-        else if (lookingRight == true && oneForHorz != 1)
-        {
-            transform.Translate(new Vector3(xStep, -1 * (speed * Time.deltaTime)));
-        }
-        else if (lookingRight == false && oneForHorz == 1) {
-            transform.Translate(new Vector3((speed * Time.deltaTime), xStep));
-        }
-        else
-        {
-            transform.Translate(new Vector3(-1 * (speed * Time.deltaTime), xStep));
+            if (lookingRight == false && oneForHorz != 1)
+            {
+                transform.Translate(new Vector3(xStep, speed * Time.deltaTime));
+            }
+            else if (lookingRight == true && oneForHorz != 1)
+            {
+                transform.Translate(new Vector3(xStep, -1 * (speed * Time.deltaTime)));
+            }
+            else if (lookingRight == false && oneForHorz == 1)
+            {
+                transform.Translate(new Vector3((speed * Time.deltaTime), xStep));
+            }
+            else
+            {
+                transform.Translate(new Vector3(-1 * (speed * Time.deltaTime), xStep));
 
+            }
+            theta += thetaStep;
+        } else
+        {
+            transform.Translate(new Vector2(0, amplitude * Mathf.Sin(theta * waveFrequency)));
+            theta += thetaStep;
         }
-        theta += thetaStep;
     }
 
     private void OnTriggerEnter2D(Collider2D collision) // Whenever colliders hits a wall, the bat turns

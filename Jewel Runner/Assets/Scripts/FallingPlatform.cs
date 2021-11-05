@@ -13,7 +13,7 @@ public class FallingPlatform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Invoke("Break", 1); //breaks the platform after 1 second of the player standing on it
+        Invoke("Break", 0.5f); //breaks the platform after half a second of the player standing on it
     }
 
     private void Break() //disables the sprite renderer and both box colliders to ensure the gameobject no longer interacts with the player

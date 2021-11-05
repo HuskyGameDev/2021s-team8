@@ -136,7 +136,7 @@ public class CharacterController : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyUp(KeyCode.Space)) //whenever the player lets go of the space button, they will stop jumping.
+            if (!Input.GetKey(KeyCode.Space)) //whenever the player lets go of the space button, they will stop jumping.
             {
                 isJumping = false;
             }
@@ -178,6 +178,7 @@ public class CharacterController : MonoBehaviour
                 rigidbody2D.velocity = new Vector2(12 * direction, 0);
             }
             isDashing = true;
+            isJumping = false;
             canDash = false; //makes it so that the player can't dash until they touch the ground
             nextDashTime = Time.time + dashCooldownTime; //sets the next time when the player can dash
         }
