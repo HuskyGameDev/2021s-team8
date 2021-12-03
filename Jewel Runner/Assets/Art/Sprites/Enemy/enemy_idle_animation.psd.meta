@@ -8,6 +8,15 @@ TextureImporter:
   - first:
       213: 4017096487208508376
     second: enemy_idle_animation_1
+  - first:
+      213: 1724722876081600968
+    second: enemy_idle_animation_0
+  - first:
+      213: -8889153029370529076
+    second: enemy_idle_animation_1
+  - first:
+      213: -9115073132046697039
+    second: enemy_idle_animation_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -96,19 +105,19 @@ TextureImporter:
       name: enemy_idle_animation_0
       rect:
         serializedVersion: 2
-        x: 7
+        x: 2
         y: 0
-        width: 19
-        height: 32
+        width: 21
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74915306d8b2812c0800000000000000
-      internalID: -4460767544706000569
+      spriteID: 8c975dc51527fe710800000000000000
+      internalID: 1724722876081600968
       vertices: []
       indices: 
       edges: []
@@ -117,19 +126,19 @@ TextureImporter:
       name: enemy_idle_animation_1
       rect:
         serializedVersion: 2
-        x: 36
+        x: 31
         y: 0
-        width: 21
-        height: 31
+        width: 23
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8db588cb8f79fb730800000000000000
-      internalID: 4017096487208508376
+      spriteID: cca3842aa6263a480800000000000000
+      internalID: -8889153029370529076
       vertices: []
       indices: 
       edges: []
