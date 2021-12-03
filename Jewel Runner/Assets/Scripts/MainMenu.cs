@@ -10,6 +10,11 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(DelayedStart());
         }
 
+     public void GameOptions()
+            {
+                   StartCoroutine(Controls());
+            }
+
     public void GameQuit()
         {
                 Application.Quit(); //quits the game
@@ -20,4 +25,9 @@ public class MainMenu : MonoBehaviour
         yield return new WaitForSeconds(2.8f);
         SceneManager.LoadScene("Johnathan"); //Loads the scene based off of button input
     }
+    IEnumerator Controls()
+        {
+            yield return new WaitForSeconds(0.1f);
+           SceneManager.LoadScene("Controls"); //Loads the scene based off of button input
+        }
 }
