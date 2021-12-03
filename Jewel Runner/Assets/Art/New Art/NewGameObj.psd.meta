@@ -77,6 +77,24 @@ TextureImporter:
   - first:
       213: -5200923920459205650
     second: NewGameObj_12
+  - first:
+      213: -5209353520222456565
+    second: NewGameObj_12
+  - first:
+      213: 6948687542904405011
+    second: NewGameObj_13
+  - first:
+      213: -2164921734996018515
+    second: NewGameObj_14
+  - first:
+      213: 5318155250987196660
+    second: NewGameObj_15
+  - first:
+      213: -8491612825304721832
+    second: NewGameObj_16
+  - first:
+      213: 2396769731389484922
+    second: NewGameObj_17
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -428,8 +446,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee37231004b92d7b0800000000000000
-      internalID: -5200923920459205650
+      spriteID: b05b5bdd298a4b7b0800000000000000
+      internalID: -5209353520222456565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewGameObj_13
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 110
+        width: 28
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31cbff92182be6060800000000000000
+      internalID: 6948687542904405011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewGameObj_14
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 91
+        width: 51
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daa3a0bf627a4f1e0800000000000000
+      internalID: -2164921734996018515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewGameObj_15
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 73
+        width: 51
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f068732602edc940800000000000000
+      internalID: 5318155250987196660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewGameObj_16
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 55
+        width: 51
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8569f89302bb72a80800000000000000
+      internalID: -8491612825304721832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewGameObj_17
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 37
+        width: 51
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7fe0ef3f59034120800000000000000
+      internalID: 2396769731389484922
       vertices: []
       indices: 
       edges: []
