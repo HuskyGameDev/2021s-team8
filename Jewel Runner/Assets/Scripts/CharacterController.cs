@@ -52,10 +52,12 @@ public class CharacterController : MonoBehaviour
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(isGrounded.position, isGroundedOverlap, isGround);
 		for (int i = 0; i < colliders.Length; i++)
 		{
-			if (colliders[i].gameObject != gameObject)
-			{
-				grounded = true;
-                canDash = true; //makes sure that when the player is on the ground, their dash is refreshed
+            if (colliders[i].gameObject != gameObject)
+            {
+                grounded = true;
+                if (!isDashing) { 
+                    canDash = true; //makes sure that when the player is on the ground, their dash is refreshed
+                }
 				if (!wasGrounded && rigidbody2D.velocity.y < 0)
 					OnLandEvent.Invoke();
 			}
@@ -159,6 +161,7 @@ public class CharacterController : MonoBehaviour
     {
         if (Time.time > nextDashTime && canDash) // makes sure the dash cooldown has finished and the player has touched the ground since dashing previously
         {
+            SoundManagerScript.PlaySound("Dash");
             if (Input.GetAxisRaw("Horizontal") != 0) 
             {
                 //if the player is pressing in a horizontal direction, they will dash in that direction
