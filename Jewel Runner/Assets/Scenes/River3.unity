@@ -6382,7 +6382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetJewel: {fileID: 1608133989}
-  player: {fileID: 0}
+  player: {fileID: 1428289270}
   delayTeleport: 0
 --- !u!61 &937569653
 BoxCollider2D:
@@ -6469,7 +6469,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937569649}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.65, y: 7.36, z: 0}
+  m_LocalPosition: {x: -10.81, y: 7.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1710341515}
@@ -9930,7 +9930,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608133988}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.38, y: 5.4, z: 0}
+  m_LocalPosition: {x: 9.62, y: 5.79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 262009020}
