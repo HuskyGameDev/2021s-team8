@@ -4274,7 +4274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Eli2
-  player: {fileID: 0}
+  player: {fileID: 216760965}
 --- !u!61 &1155782438
 BoxCollider2D:
   m_ObjectHideFlags: 0

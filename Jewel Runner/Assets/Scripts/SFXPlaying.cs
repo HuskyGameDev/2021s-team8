@@ -54,7 +54,7 @@ public class SFXPlaying : MonoBehaviour
     void Update()
     {
         // if the E key is pressed AND the player is touching the jewel
-        if (Input.GetKeyDown(KeyCode.E) && touchingJewel)
+        if (touchingJewel)
         {
             // This list of if statements makes sure the right sound gets played for the same colored jewel
             if (BlackJewel != null)

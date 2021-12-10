@@ -2162,7 +2162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391107750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.5, y: -2.5, z: 0}
+  m_LocalPosition: {x: -6.4, y: -2.42, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 1296814601}
@@ -4879,7 +4879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ce08516404444443912ea595a7f9f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Simone
+  sceneName: Eli2
   player: {fileID: 0}
 --- !u!61 &2124447483
 BoxCollider2D:

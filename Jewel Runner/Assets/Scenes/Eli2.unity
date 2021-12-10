@@ -3398,7 +3398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ce08516404444443912ea595a7f9f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Michael 2
+  sceneName: Ethan2
   player: {fileID: 1095302566}
 --- !u!61 &627494440
 BoxCollider2D:
@@ -9595,7 +9595,7 @@ MonoBehaviour:
   isGrounded: {fileID: 1639319753}
   movementSmoothing: 0.1
   isJumping: 0
-  jumpTime: 1.8
+  jumpTime: 0.18
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -9781,7 +9781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetJewel: {fileID: 1356109587}
   player: {fileID: 1095302566}
-  delayTeleport: 0
+  delayTeleport: 1
 --- !u!61 &1293759992
 BoxCollider2D:
   m_ObjectHideFlags: 0
