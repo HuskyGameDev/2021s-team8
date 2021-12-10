@@ -12,7 +12,11 @@ public class MoveLevel : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        door = true;       //checks if player is touching door
+        if(collision.tag == "Player")
+        {
+            door = true;       //checks if player is touching door
+        }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
